@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose NestSocks Theme</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to NestSocks Themes</h1>
+        <p><strong>NestSocks</strong> is a <strong>Completely Free Open Source Framework</strong> by <strong>Calestial Ashley</strong>.</p>
+        <p>Visit the repository: <a href="https://github.com/CalestialAshley35/NestSocks" target="_blank">NestSocks Repository</a></p>
+        <p>Choose a theme from the dropdown below to get the link for integration:</p>
+
+        <select id="themeSelector">
+            <option value="sleek-dark" selected>Sleek Dark</option>
+            <option value="vibrant-gradient">Vibrant Gradient</option>
+            <option value="modern-terminal">Modern Terminal</option>
+            <option value="minimal-light">Minimal Light</option>
+            <option value="cyber-neon">Cyber Neon</option>
+        </select>
+
+        <div id="themeLinkDisplay">
+            <p>Link to use the theme:</p>
+            <code id="themeLink">https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/sleek-dark.css</code>
+        </div>
+    </div>
+
+    <script>
+        // Get the theme selector and link display element
+        const themeSelector = document.getElementById("themeSelector");
+        const themeLinkDisplay = document.getElementById("themeLink");
+
+        // Add event listener to the selector
+        themeSelector.addEventListener("change", function() {
+            // Update the displayed link based on the selected theme
+            const selectedTheme = themeSelector.value;
+            themeLinkDisplay.innerHTML = `https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/${selectedTheme}.css`;
+        });
+    </script>
+</body>
+</html>
