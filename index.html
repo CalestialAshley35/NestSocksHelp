@@ -21,8 +21,7 @@
             <option value="neon-minimalism">Neon Minimalism</option>
             <option value="modern-chat">Modern Chat</option>
             <option value="readability">Syntax Highlights</option>
-            <option value="glow-animation">Glow Animation</option
-            
+            <option value="glow-animation">Glow Animation</option>
         </select>
 
         <div id="themeLinkDisplay">
@@ -40,7 +39,7 @@
         themeSelector.addEventListener("change", function() {
             // Update the displayed link based on the selected theme
             const selectedTheme = themeSelector.value;
-            themeLinkDisplay.innerHTML = `https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/${selectedTheme}.css`;
+            themeLinkDisplay.textContent = `https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/${selectedTheme}.css`;
         });
     </script>
 </body>
