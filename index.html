@@ -22,12 +22,56 @@
             <option value="modern-chat">Modern Chat</option>
             <option value="readability">Syntax Highlights</option>
             <option value="glow-animation">Glow Animation</option>
+            <option value="star-animation">Star Animation</option>
         </select>
 
         <div id="themeLinkDisplay">
-            <p>Link to use the theme:</p>
+            <p>Links to use the theme:</p>
             <code id="themeLink">https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/sleek-dark.css</code>
         </div>
+
+        <hr>
+        <h2>Documentation</h2>
+        <p><strong>Purpose:</strong> The NestSocks Theme Selector allows users to easily choose a theme or animation style from the NestSocks framework and provides direct links for integration into their projects.</p>
+
+        <h3>Features:</h3>
+        <ul>
+            <li>Dropdown menu for selecting themes and animations.</li>
+            <li>Dynamically updates and displays the required CSS or JavaScript links for integration.</li>
+            <li>Special support for <strong>Star Animation</strong>, providing both the CSS and JavaScript links.</li>
+        </ul>
+
+        <h3>How to Use:</h3>
+        <ol>
+            <li>Include this file in your project and open it in a browser.</li>
+            <li>Select a theme or animation from the dropdown menu.</li>
+            <li>Copy the displayed links and use them in your project.</li>
+        </ol>
+
+        <h3>Example Integration:</h3>
+        <p>Here’s an example of how to use a theme or animation in your project:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Using NestSocks&lt;/title&gt;
+
+    &lt;!-- Example: Link for Sleek Dark Theme --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/sleek-dark.css"&gt;
+
+    &lt;!-- Example: Adding Star Animation --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/star-animation/star-animation.css"&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/star-animation/star-script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="stars-container"&gt;
+        &lt;h1&gt;Star Animation is Active!&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
     </div>
 
     <script>
@@ -39,8 +83,18 @@
         themeSelector.addEventListener("change", function() {
             // Update the displayed link based on the selected theme
             const selectedTheme = themeSelector.value;
-            themeLinkDisplay.textContent = `https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/${selectedTheme}.css`;
+
+            if (selectedTheme === "star-animation") {
+                themeLinkDisplay.innerHTML = `
+                    CSS: <br>
+                    <code>https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/star-animation/star-animation.css</code><br>
+                    JavaScript: <br>
+                    <code>https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/star-animation/star-script.js</code>
+                `;
+            } else {
+                themeLinkDisplay.textContent = `https://cdn.jsdelivr.net/gh/CalestialAshley35/NestSocks@main/${selectedTheme}.css`;
+            }
         });
     </script>
 </body>
-</html>
+    </html>
